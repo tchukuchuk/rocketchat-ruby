@@ -32,7 +32,7 @@ module RocketChat
       check_response response, fail_unless_ok
 
       response_json = parse_response(response.body)
-      options[:debug]&.puts("Response: #{response_json.inspect}")
+      options[:debug].puts("Response: #{response_json.inspect}") if options[:debug]
       check_response_json response_json, upstreamed_errors
 
       response_json
